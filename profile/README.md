@@ -1,35 +1,103 @@
 # rocketdeploy
 
-rocketdeploy designs and delivers software systems built for real-world use —  
+rocketdeploy designs and delivers software systems built for real-world use —
 from early architecture decisions to stable, production deployments.
 
-We focus on **end-to-end delivery**. That means taking responsibility not only
-for writing code, but for how a system is designed, built, deployed, and operated
-over time.
+We focus on **end-to-end delivery**:
+architecture → build → production → operability.
 
-Our work starts with architecture and ends in production.
+Our responsibility does not stop at writing code.
+We design systems that can be deployed, operated, and evolved over time.
 
 ---
 
-## What we do
+## What we build
 
-We help founders and teams move systems forward when:
-- complexity starts to grow,
-- delivery slows down,
-- prototypes need to become production-ready platforms.
+We work across multiple system layers:
 
-Our typical scope includes:
-- system and application architecture
-- backend and frontend development
-- API design and integrations
+- application architecture
+- backend and frontend systems
+- production-grade SPAs
+- CMS-based operational platforms
 - microservices and event-driven systems
-- CMS-based systems extended beyond standard use cases
-- cloud-native and container-based platforms
-- CI/CD pipelines and automated deployments
-- refactoring, stabilization, and production hardening
+- runtime supervision and reliability layers
+- CI/CD and deployment automation
+- refactoring and production hardening
 
-We’re often brought in at the point where *“it works”* is no longer enough,
-and a system needs to be reliable, scalable, and operable.
+We’re typically brought in when:
+
+- complexity begins to slow delivery,
+- prototypes need to become maintainable platforms,
+- operational reliability becomes critical,
+- systems require clearer boundaries and ownership.
+
+---
+
+## Repository structure
+
+This organization contains both:
+
+1. **Production-grade implementations**
+2. **Architecture showcases (sanitized reference versions)**
+
+Repositories are intentionally structured to reflect real system boundaries.
+
+### WooCommerce & CMS Extensions
+
+- `woocommerce-order-status-manager`  
+  Production-ready WooCommerce plugin for structured order status management.
+
+- `showcase-ops-layer-for-woocommerce`  
+  Architecture showcase of a CMS-based operational layer built on WooCommerce.
+
+- `showcase-woocommerce-admin-extension`  
+  Architecture showcase of a structured admin extension pattern.
+
+---
+
+### Frontend Applications (SPA)
+
+- `showcase-kiosk-web-application`  
+  Production-grade kiosk SPA (touch-first, constrained execution environment).
+
+- `showcase-internal-operational-spa`  
+  Role-based internal operational system (RBAC, OAuth2, BFF pattern).
+
+---
+
+### Runtime & Reliability
+
+- `showcase-kiosk-runtime-watchdog`  
+  Minimal runtime supervision layer ensuring resilience of public-facing applications.
+
+---
+
+### Company Website
+
+- `rocketdeploy-dev.github.io`  
+  Static company website built with a component-driven architecture.
+
+- `showcase-company-website`  
+  Architecture showcase of a static, content-driven frontend system.
+
+---
+
+## Architecture showcases
+
+Some repositories in this organization are **reference architecture showcases**.
+
+They present:
+
+- system boundaries and layering,
+- execution flow and responsibilities,
+- operational constraints,
+- engineering trade-offs,
+- reliability and maintainability concerns,
+
+while intentionally omitting business-specific logic and sensitive details.
+
+These repositories are not demo apps.
+They are structured, technical explanations of real-world systems.
 
 ---
 
@@ -38,57 +106,35 @@ and a system needs to be reliable, scalable, and operable.
 rocketdeploy operates in a **delivery-first model**.
 
 That means:
-- clear ownership and responsibility,
+
+- clear ownership,
 - pragmatic technical decisions,
-- realistic scope and expectations,
-- systems designed with production in mind from day one.
+- realistic scope control,
+- production-oriented architecture from day one.
 
-We avoid over-engineering, but we also avoid shortcuts
-that create long-term operational problems.
-
----
-
-## Architecture showcases
-
-Some repositories in this organization are **architecture showcases** —
-sanitized, reference-level descriptions of real production systems.
-
-They focus on:
-- architectural boundaries and layering,
-- execution flows and responsibilities,
-- engineering decisions and trade-offs,
-- operability, auditability, and maintenance concerns,
-
-while intentionally omitting business-specific logic and sensitive details.
-
-Example:
-- **Operational layer for WooCommerce (architecture showcase)**  
-  https://github.com/rocketdeploy-dev/showcase-ops-layer-for-woocommerce
-
-Related case study:
-- https://rocketdeploy.dev/en/case-studies/ops-layer-for-woocommerce
+We avoid over-engineering,
+but we also avoid shortcuts that create long-term operational debt.
 
 ---
 
 ## For founders
 
 If you’re a non-technical or semi-technical founder,
-we often act as a **technical partner** — helping you:
-- shape the system architecture,
-- make the right early decisions,
-- turn an MVP into a maintainable product,
-- avoid costly rewrites later.
+we often act as a technical partner — helping you:
 
-More about how we work with founders:
-- https://rocketdeploy.dev/en/for-founders
+- define system architecture,
+- make correct early technical decisions,
+- turn an MVP into a maintainable product,
+- prevent expensive rewrites later.
+
+More:
+https://rocketdeploy.dev/en/for-founders
 
 ---
 
 ## Contact
 
-If you’re dealing with a system that needs to move beyond the prototype stage,
-or you’re facing growing complexity and operational challenges:
+If your system needs to move beyond prototype stage
+or is starting to accumulate operational complexity:
 
 👉 https://rocketdeploy.dev/en/contact
-
-We’ll help you figure out a reasonable next step.

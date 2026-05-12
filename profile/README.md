@@ -7,7 +7,7 @@ We focus on **end-to-end delivery**:
 architecture → build → production → operability.
 
 Our responsibility does not stop at writing code.
-We design systems that can be deployed, operated, and evolved over time.
+We design systems that can be built, deployed, operated, maintained, and evolved over time.
 
 ---
 
@@ -15,74 +15,49 @@ We design systems that can be deployed, operated, and evolved over time.
 
 We work across multiple system layers:
 
-- application architecture
+- application and platform architecture
 - backend and frontend systems
 - production-grade SPAs
-- CMS-based operational platforms
+- MVPs that can grow into maintainable platforms
 - microservices and event-driven systems
+- modular monoliths and legacy modernization
+- service extraction from existing platforms
+- AI-assisted operational systems
+- BFF, Core API, MCP, and gateway-style service layers
+- CMS-based operational platforms
 - runtime supervision and reliability layers
 - CI/CD and deployment automation
 - refactoring and production hardening
 
 We’re typically brought in when:
 
+- a new product needs a solid technical foundation,
+- an MVP needs to be designed with future growth in mind,
 - complexity begins to slow delivery,
 - prototypes need to become maintainable platforms,
+- legacy systems need clearer boundaries,
 - operational reliability becomes critical,
-- systems require clearer boundaries and ownership.
+- systems require better ownership, runtime separation, and long-term evolution.
 
 ---
 
-## Repository structure
+## Repository structure in this organization
 
-This organization contains both:
+This organization contains:
 
-1. **Production-grade implementations**
-2. **Architecture showcases (sanitized reference versions)**
+1. **Public architecture showcases**
+2. **Production-grade implementations**
+3. **Runtime and infrastructure repositories**
 
 Repositories are intentionally structured to reflect real system boundaries.
 
-### WooCommerce & CMS Extensions
+Public showcase repositories expose the architectural structure and engineering approach without sensitive business logic, credentials, or customer data.
 
-- `woocommerce-order-status-manager`  
-  Production-ready WooCommerce plugin for structured order status management.
-
-- `showcase-ops-layer-for-woocommerce`  
-  Architecture showcase of a CMS-based operational layer built on WooCommerce.
-
-- `showcase-woocommerce-admin-extension`  
-  Architecture showcase of a structured admin extension pattern.
+Some production and runtime repositories are private and are described here only at a high level.
 
 ---
 
-### Frontend Applications (SPA)
-
-- `showcase-kiosk-web-application`  
-  Production-grade kiosk SPA (touch-first, constrained execution environment).
-
-- `showcase-internal-operational-spa`  
-  Role-based internal operational system (RBAC, OAuth2, BFF pattern).
-
----
-
-### Runtime & Reliability
-
-- `showcase-kiosk-runtime-watchdog`  
-  Minimal runtime supervision layer ensuring resilience of public-facing applications.
-
----
-
-### Company Website
-
-- `rocketdeploy-dev.github.io`  
-  Static company website built with a component-driven architecture.
-
-- `showcase-company-website`  
-  Architecture showcase of a static, content-driven frontend system.
-
----
-
-## Architecture showcases
+## Public architecture showcases
 
 Some repositories in this organization are **reference architecture showcases**.
 
@@ -93,11 +68,74 @@ They present:
 - operational constraints,
 - engineering trade-offs,
 - reliability and maintainability concerns,
+- modernization and extraction paths,
+- runtime and infrastructure boundaries,
 
 while intentionally omitting business-specific logic and sensitive details.
 
 These repositories are not demo apps.
 They are structured, technical explanations of real-world systems.
+
+Some showcases also include evolution logs that document how a system changes over time: which boundaries became explicit, which runtime responsibilities were separated, and which areas became ready for future extraction.
+
+### Platform Architecture & Modernization
+
+- `showcase-commerce-platform-modernization`  
+  Architecture showcase of a long-running commerce platform being modernized from a PHP/Yii2 modular monolith toward explicit boundaries, Core API facades, MCP-style tool access, AI-assisted operations, runtime separation, and future service extraction.
+
+### WooCommerce & CMS Extensions
+
+- `showcase-ops-layer-for-woocommerce`  
+  Architecture showcase of a CMS-based operational layer built on WooCommerce.
+
+- `showcase-woocommerce-admin-extension`  
+  Architecture showcase of a structured admin extension pattern.
+
+### Frontend Applications (SPA)
+
+- `showcase-kiosk-web-application`  
+  Production-grade kiosk SPA for touch-first, constrained execution environments.
+
+- `showcase-internal-operational-spa`  
+  Role-based internal operational system using RBAC, OAuth2, and the BFF pattern.
+
+### Runtime & Reliability
+
+- `showcase-kiosk-runtime-watchdog`  
+  Minimal runtime supervision layer ensuring resilience of public-facing applications.
+
+### Company Website
+
+- `showcase-company-website`  
+  Architecture showcase of a static, content-driven frontend system.
+
+---
+
+## Production and private work
+
+In addition to public showcases, this organization also contains private production and runtime repositories.
+
+They support work such as:
+
+- building new operational platforms,
+- developing backend and frontend systems,
+- modernizing long-running applications,
+- extracting services from existing platforms,
+- building Core API, BFF, MCP, and gateway-style layers,
+- implementing AI-assisted operational tooling,
+- maintaining infrastructure and runtime composition.
+
+Private repositories are intentionally not listed in detail here.
+
+---
+
+## Public production repositories
+
+- `woocommerce-order-status-manager`  
+  Production-ready WooCommerce plugin for structured order status management.
+
+- `rocketdeploy-dev.github.io`  
+  Static company website built with Astro and a content-driven case-study structure.
 
 ---
 
@@ -115,6 +153,8 @@ That means:
 We avoid over-engineering,
 but we also avoid shortcuts that create long-term operational debt.
 
+We build new systems with future operability in mind, and we modernize existing systems incrementally when continuity matters.
+
 ---
 
 ## For founders
@@ -124,8 +164,10 @@ we often act as a technical partner — helping you:
 
 - define system architecture,
 - make correct early technical decisions,
-- turn an MVP into a maintainable product,
-- prevent expensive rewrites later.
+- design and build new products,
+- turn an MVP into a maintainable platform,
+- prevent expensive rewrites later,
+- modernize existing systems without stopping the business.
 
 More:
 https://rocketdeploy.dev/en/for-founders
@@ -134,7 +176,8 @@ https://rocketdeploy.dev/en/for-founders
 
 ## Contact
 
-If your system needs to move beyond prototype stage
-or is starting to accumulate operational complexity:
+If your product needs a solid technical foundation,
+your MVP needs to become a maintainable platform,
+or your existing system is starting to accumulate operational complexity:
 
 👉 https://rocketdeploy.dev/en/contact
